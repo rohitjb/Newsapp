@@ -1,0 +1,25 @@
+#!/bin/sh
+# scripts/pre-commit
+# Runs SwiftLint on staged Swift files before every commit.
+
+STAGED_SWIFT=$(git diff --cached --name-only --diff-filter=ACM | grep '\.swift$')
+
+if [ -z "$STAGED_SWIFT" ]; then
+  exit 0
+fi
+
+if ! which swiftlint > /dev/null; then
+  echo "⚠️  SwiftLint not found. Install it or run: brew install swiftlint"
+  exit 1
+fi
+
+echo "Running SwiftLint on staged Swift files..."
+swiftlint lint --strict $STAGED_SWIFT
+
+if [ $? -ne 0 ]; then
+  echo "❌ SwiftLint violations found. Fix them before committing."
+  exit 1
+fi
+
+echo "✅ SwiftLint passed."
+exit 0
