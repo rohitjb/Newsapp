@@ -1,3 +1,4 @@
+// Packages/Core/NetworkModule/Package.swift
 // swift-tools-version: 5.9
 import PackageDescription
 
