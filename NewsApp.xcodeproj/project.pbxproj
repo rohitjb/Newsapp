@@ -196,6 +196,15 @@
 			mainGroup = F974F82F2F8B43210060E7C4;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
+			packageReferences = (
+				A1B2C3D4E5F600000000001A /* NetworkModule */,
+				A1B2C3D4E5F600000000002B /* StorageModule */,
+				A1B2C3D4E5F600000000003C /* FeatureFlagModule */,
+				A1B2C3D4E5F600000000004D /* SourceModule */,
+				A1B2C3D4E5F600000000005E /* ArticleModule */,
+				A1B2C3D4E5F600000000006F /* SavedModule */,
+				A1B2C3D4E5F600000000007G /* WebModule */,
+			);
 			productRefGroup = F974F8392F8B43210060E7C4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -570,6 +579,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A1B2C3D4E5F600000000001A /* NetworkModule */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Core/NetworkModule;
+		};
+		A1B2C3D4E5F600000000002B /* StorageModule */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Core/StorageModule;
+		};
+		A1B2C3D4E5F600000000003C /* FeatureFlagModule */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Core/FeatureFlagModule;
+		};
+		A1B2C3D4E5F600000000004D /* SourceModule */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Features/SourceModule;
+		};
+		A1B2C3D4E5F600000000005E /* ArticleModule */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Features/ArticleModule;
+		};
+		A1B2C3D4E5F600000000006F /* SavedModule */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Features/SavedModule;
+		};
+		A1B2C3D4E5F600000000007G /* WebModule */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Features/WebModule;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 	};
 	rootObject = F974F8302F8B43210060E7C4 /* Project object */;
 }
