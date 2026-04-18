@@ -1,4 +1,3 @@
-// NewsAppTests/FeatureFlagModuleTests.swift
 import Testing
 import Foundation
 @testable import FeatureFlagModule
@@ -10,6 +9,7 @@ struct FeatureFlagTests {
     func saveEnabledDefaultsFalse() {
         let suiteName = "test.featureflags.\(UUID().uuidString)"
         let defaults = UserDefaults(suiteName: suiteName)!
+        defer { defaults.removePersistentDomain(forName: suiteName) }
         let flags = FeatureFlags(defaults: defaults)
         #expect(flags.saveEnabled == false)
     }
@@ -18,6 +18,7 @@ struct FeatureFlagTests {
     func saveEnabledPersists() {
         let suiteName = "test.featureflags.\(UUID().uuidString)"
         let defaults = UserDefaults(suiteName: suiteName)!
+        defer { defaults.removePersistentDomain(forName: suiteName) }
         var flags = FeatureFlags(defaults: defaults)
         flags.saveEnabled = true
         let flags2 = FeatureFlags(defaults: defaults)

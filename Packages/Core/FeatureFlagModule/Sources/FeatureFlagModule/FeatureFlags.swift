@@ -5,6 +5,10 @@ public struct FeatureFlags {
 
     public static let appGroupID = "group.com.newsapp.flags"
 
+    private enum Keys {
+        static let saveEnabled = "saveEnabled"
+    }
+
     public init() {
         self.defaults = UserDefaults(suiteName: FeatureFlags.appGroupID) ?? .standard
     }
@@ -14,7 +18,7 @@ public struct FeatureFlags {
     }
 
     public var saveEnabled: Bool {
-        get { defaults.bool(forKey: "saveEnabled") }
-        set { defaults.set(newValue, forKey: "saveEnabled") }
+        get { defaults.bool(forKey: Keys.saveEnabled) }
+        set { defaults.set(newValue, forKey: Keys.saveEnabled) }
     }
 }
