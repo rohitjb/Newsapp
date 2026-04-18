@@ -32,6 +32,12 @@ public final class PinningDelegate: NSObject, URLSessionDelegate, Sendable {
             return
         }
 
+        var trustError: CFError?
+        guard SecTrustEvaluateWithError(serverTrust, &trustError) else {
+            completionHandler(.cancelAuthenticationChallenge, nil)
+            return
+        }
+
         let hash = SHA256.hash(data: publicKeyData)
         let hashBase64 = Data(hash).base64EncodedString()
 
