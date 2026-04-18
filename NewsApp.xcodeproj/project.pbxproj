@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F98DE2622F930C74009917B3 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F98DE2612F930C74009917B3 /* Secrets.xcconfig */; };
+		A1B2C3D4E5F6FFFF00000001 /* FeatureFlagModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000002 /* FeatureFlagModule */; };
+		A1B2C3D4E5F6FFFF00000003 /* FeatureFlagModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000004 /* FeatureFlagModule */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		F974F8462F8B43250060E7C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,11 +33,25 @@
 		F974F8382F8B43210060E7C4 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F974F8452F8B43250060E7C4 /* NewsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F974F84F2F8B43250060E7C4 /* NewsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F98DE2612F930C74009917B3 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F98DE2642F930CD9009917B3 /* Exceptions for "NewsApp" folder in "NewsApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F974F8372F8B43210060E7C4 /* NewsApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F974F83A2F8B43210060E7C4 /* NewsApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F98DE2642F930CD9009917B3 /* Exceptions for "NewsApp" folder in "NewsApp" target */,
+			);
 			path = NewsApp;
 			sourceTree = "<group>";
 		};
@@ -52,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B2C3D4E5F6FFFF00000001 /* FeatureFlagModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B2C3D4E5F6FFFF00000003 /* FeatureFlagModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +101,7 @@
 				F974F8482F8B43250060E7C4 /* NewsAppTests */,
 				F974F8522F8B43250060E7C4 /* NewsAppUITests */,
 				F974F8392F8B43210060E7C4 /* Products */,
+				F98DE2612F930C74009917B3 /* Secrets.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +122,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F974F8592F8B43250060E7C4 /* Build configuration list for PBXNativeTarget "NewsApp" */;
 			buildPhases = (
+				F9BBF3232F930B2E004542B3 /* SwiftLint */,
 				F974F8342F8B43210060E7C4 /* Sources */,
 				F974F8352F8B43210060E7C4 /* Frameworks */,
 				F974F8362F8B43210060E7C4 /* Resources */,
@@ -112,6 +136,7 @@
 			);
 			name = NewsApp;
 			packageProductDependencies = (
+				A1B2C3D4E5F6FFFF00000002 /* FeatureFlagModule */,
 			);
 			productName = NewsApp;
 			productReference = F974F8382F8B43210060E7C4 /* NewsApp.app */;
@@ -135,6 +160,7 @@
 			);
 			name = NewsAppTests;
 			packageProductDependencies = (
+				A1B2C3D4E5F6FFFF00000004 /* FeatureFlagModule */,
 			);
 			productName = NewsAppTests;
 			productReference = F974F8452F8B43250060E7C4 /* NewsAppTests.xctest */;
@@ -195,16 +221,16 @@
 			);
 			mainGroup = F974F82F2F8B43210060E7C4;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			packageReferences = (
-				A1B2C3D4E5F600000000001A /* NetworkModule */,
-				A1B2C3D4E5F600000000002B /* StorageModule */,
-				A1B2C3D4E5F600000000003C /* FeatureFlagModule */,
-				A1B2C3D4E5F600000000004D /* SourceModule */,
-				A1B2C3D4E5F600000000005E /* ArticleModule */,
-				A1B2C3D4E5F600000000006F /* SavedModule */,
-				A1B2C3D4E5F600000000007G /* WebModule */,
+				A1B2C3D4E5F600000000001A /* XCLocalSwiftPackageReference "Packages/Core/NetworkModule" */,
+				A1B2C3D4E5F600000000002B /* XCLocalSwiftPackageReference "Packages/Core/StorageModule" */,
+				A1B2C3D4E5F600000000003C /* XCLocalSwiftPackageReference "Packages/Core/FeatureFlagModule" */,
+				A1B2C3D4E5F600000000004D /* XCLocalSwiftPackageReference "Packages/Features/SourceModule" */,
+				A1B2C3D4E5F600000000005E /* XCLocalSwiftPackageReference "Packages/Features/ArticleModule" */,
+				A1B2C3D4E5F600000000006F /* XCLocalSwiftPackageReference "Packages/Features/SavedModule" */,
+				A1B2C3D4E5F600000000007G /* XCLocalSwiftPackageReference "Packages/Features/WebModule" */,
 			);
+			preferredProjectObjectVersion = 77;
 			productRefGroup = F974F8392F8B43210060E7C4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -221,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98DE2622F930C74009917B3 /* Secrets.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +266,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F9BBF3232F930B2E004542B3 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -f /opt/homebrew/bin/swiftlint ]; then\n  /opt/homebrew/bin/swiftlint\nelif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed. Run: brew install swiftlint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F974F8342F8B43210060E7C4 /* Sources */ = {
@@ -280,6 +329,7 @@
 /* Begin XCBuildConfiguration section */
 		F974F8572F8B43250060E7C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F98DE2612F930C74009917B3 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -315,7 +365,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -343,6 +393,7 @@
 		};
 		F974F8582F8B43250060E7C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F98DE2612F930C74009917B3 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -378,7 +429,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -406,16 +457,19 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEWSAPI_KEY = "$(NEWSAPI_KEY)";
 				PRODUCT_BUNDLE_IDENTIFIER = sd.NewsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -437,16 +491,19 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEWSAPI_KEY = "$(NEWSAPI_KEY)";
 				PRODUCT_BUNDLE_IDENTIFIER = sd.NewsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -466,7 +523,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sd.NewsAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -487,7 +544,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sd.NewsAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -507,6 +564,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sd.NewsAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -526,6 +584,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sd.NewsAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -580,37 +639,49 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCSwiftPackageProductDependency section */
+		A1B2C3D4E5F6FFFF00000002 /* FeatureFlagModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000003C /* XCLocalSwiftPackageReference "Packages/Core/FeatureFlagModule" */;
+			productName = FeatureFlagModule;
+		};
+		A1B2C3D4E5F6FFFF00000004 /* FeatureFlagModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000003C /* XCLocalSwiftPackageReference "Packages/Core/FeatureFlagModule" */;
+			productName = FeatureFlagModule;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin XCLocalSwiftPackageReference section */
-		A1B2C3D4E5F600000000001A /* NetworkModule */ = {
+		A1B2C3D4E5F600000000001A /* XCLocalSwiftPackageReference "Packages/Core/NetworkModule" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Core/NetworkModule;
 		};
-		A1B2C3D4E5F600000000002B /* StorageModule */ = {
+		A1B2C3D4E5F600000000002B /* XCLocalSwiftPackageReference "Packages/Core/StorageModule" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Core/StorageModule;
 		};
-		A1B2C3D4E5F600000000003C /* FeatureFlagModule */ = {
+		A1B2C3D4E5F600000000003C /* XCLocalSwiftPackageReference "Packages/Core/FeatureFlagModule" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Core/FeatureFlagModule;
 		};
-		A1B2C3D4E5F600000000004D /* SourceModule */ = {
+		A1B2C3D4E5F600000000004D /* XCLocalSwiftPackageReference "Packages/Features/SourceModule" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Features/SourceModule;
 		};
-		A1B2C3D4E5F600000000005E /* ArticleModule */ = {
+		A1B2C3D4E5F600000000005E /* XCLocalSwiftPackageReference "Packages/Features/ArticleModule" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Features/ArticleModule;
 		};
-		A1B2C3D4E5F600000000006F /* SavedModule */ = {
+		A1B2C3D4E5F600000000006F /* XCLocalSwiftPackageReference "Packages/Features/SavedModule" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Features/SavedModule;
 		};
-		A1B2C3D4E5F600000000007G /* WebModule */ = {
+		A1B2C3D4E5F600000000007G /* XCLocalSwiftPackageReference "Packages/Features/WebModule" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Features/WebModule;
 		};
 /* End XCLocalSwiftPackageReference section */
-
 	};
 	rootObject = F974F8302F8B43210060E7C4 /* Project object */;
 }
