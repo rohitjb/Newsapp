@@ -11,6 +11,8 @@
 		A1B2C3D4E5F6FFFF00000003 /* FeatureFlagModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000004 /* FeatureFlagModule */; };
 		A1B2C3D4E5F6FFFF00000005 /* StorageModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000006 /* StorageModule */; };
 		A1B2C3D4E5F6FFFF00000007 /* StorageModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000008 /* StorageModule */; };
+		A1B2C3D4E5F6FFFF00000009 /* NetworkModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF0000000A /* NetworkModule */; };
+		A1B2C3D4E5F6FFFF0000000B /* NetworkModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF0000000C /* NetworkModule */; };
 		F98DE2622F930C74009917B3 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F98DE2612F930C74009917B3 /* Secrets.xcconfig */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,7 @@
 			files = (
 				A1B2C3D4E5F6FFFF00000001 /* FeatureFlagModule in Frameworks */,
 				A1B2C3D4E5F6FFFF00000005 /* StorageModule in Frameworks */,
+				A1B2C3D4E5F6FFFF00000009 /* NetworkModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 			files = (
 				A1B2C3D4E5F6FFFF00000003 /* FeatureFlagModule in Frameworks */,
 				A1B2C3D4E5F6FFFF00000007 /* StorageModule in Frameworks */,
+				A1B2C3D4E5F6FFFF0000000B /* NetworkModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +146,7 @@
 			packageProductDependencies = (
 				A1B2C3D4E5F6FFFF00000002 /* FeatureFlagModule */,
 				A1B2C3D4E5F6FFFF00000006 /* StorageModule */,
+				A1B2C3D4E5F6FFFF0000000A /* NetworkModule */,
 			);
 			productName = NewsApp;
 			productReference = F974F8382F8B43210060E7C4 /* NewsApp.app */;
@@ -167,6 +172,7 @@
 			packageProductDependencies = (
 				A1B2C3D4E5F6FFFF00000004 /* FeatureFlagModule */,
 				A1B2C3D4E5F6FFFF00000008 /* StorageModule */,
+				A1B2C3D4E5F6FFFF0000000C /* NetworkModule */,
 			);
 			productName = NewsAppTests;
 			productReference = F974F8452F8B43250060E7C4 /* NewsAppTests.xctest */;
@@ -696,6 +702,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A1B2C3D4E5F600000000002B /* XCLocalSwiftPackageReference "Packages/Core/StorageModule" */;
 			productName = StorageModule;
+		};
+		A1B2C3D4E5F6FFFF0000000A /* NetworkModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000001A /* XCLocalSwiftPackageReference "Packages/Core/NetworkModule" */;
+			productName = NetworkModule;
+		};
+		A1B2C3D4E5F6FFFF0000000C /* NetworkModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000001A /* XCLocalSwiftPackageReference "Packages/Core/NetworkModule" */;
+			productName = NetworkModule;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
