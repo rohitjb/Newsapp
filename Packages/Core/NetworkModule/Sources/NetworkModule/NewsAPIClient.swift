@@ -96,4 +96,17 @@ public struct NewsAPIClient: NewsAPIClientProtocol {
             throw NewsAPIError.decodingError
         }
     }
+
+    public static func makeLive() -> NewsAPIClient {
+        let disablePinning = ProcessInfo.processInfo.arguments.contains("-disablePinning")
+        let session: URLSession
+        if disablePinning {
+            session = URLSession.shared
+        } else {
+            let delegate = PinningDelegate()
+            let config = URLSessionConfiguration.default
+            session = URLSession(configuration: config, delegate: delegate, delegateQueue: nil)
+        }
+        return NewsAPIClient(session: session)
+    }
 }
