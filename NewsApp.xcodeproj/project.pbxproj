@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F98DE2622F930C74009917B3 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F98DE2612F930C74009917B3 /* Secrets.xcconfig */; };
 		A1B2C3D4E5F6FFFF00000001 /* FeatureFlagModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000002 /* FeatureFlagModule */; };
 		A1B2C3D4E5F6FFFF00000003 /* FeatureFlagModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000004 /* FeatureFlagModule */; };
+		A1B2C3D4E5F6FFFF00000005 /* StorageModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000006 /* StorageModule */; };
+		A1B2C3D4E5F6FFFF00000007 /* StorageModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000008 /* StorageModule */; };
+		F98DE2622F930C74009917B3 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F98DE2612F930C74009917B3 /* Secrets.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1B2C3D4E5F6FFFF00000001 /* FeatureFlagModule in Frameworks */,
+				A1B2C3D4E5F6FFFF00000005 /* StorageModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1B2C3D4E5F6FFFF00000003 /* FeatureFlagModule in Frameworks */,
+				A1B2C3D4E5F6FFFF00000007 /* StorageModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +141,7 @@
 			name = NewsApp;
 			packageProductDependencies = (
 				A1B2C3D4E5F6FFFF00000002 /* FeatureFlagModule */,
+				A1B2C3D4E5F6FFFF00000006 /* StorageModule */,
 			);
 			productName = NewsApp;
 			productReference = F974F8382F8B43210060E7C4 /* NewsApp.app */;
@@ -161,6 +166,7 @@
 			name = NewsAppTests;
 			packageProductDependencies = (
 				A1B2C3D4E5F6FFFF00000004 /* FeatureFlagModule */,
+				A1B2C3D4E5F6FFFF00000008 /* StorageModule */,
 			);
 			productName = NewsAppTests;
 			productReference = F974F8452F8B43250060E7C4 /* NewsAppTests.xctest */;
@@ -639,19 +645,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCSwiftPackageProductDependency section */
-		A1B2C3D4E5F6FFFF00000002 /* FeatureFlagModule */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A1B2C3D4E5F600000000003C /* XCLocalSwiftPackageReference "Packages/Core/FeatureFlagModule" */;
-			productName = FeatureFlagModule;
-		};
-		A1B2C3D4E5F6FFFF00000004 /* FeatureFlagModule */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A1B2C3D4E5F600000000003C /* XCLocalSwiftPackageReference "Packages/Core/FeatureFlagModule" */;
-			productName = FeatureFlagModule;
-		};
-/* End XCSwiftPackageProductDependency section */
-
 /* Begin XCLocalSwiftPackageReference section */
 		A1B2C3D4E5F600000000001A /* XCLocalSwiftPackageReference "Packages/Core/NetworkModule" */ = {
 			isa = XCLocalSwiftPackageReference;
@@ -682,6 +675,29 @@
 			relativePath = Packages/Features/WebModule;
 		};
 /* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A1B2C3D4E5F6FFFF00000002 /* FeatureFlagModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000003C /* XCLocalSwiftPackageReference "Packages/Core/FeatureFlagModule" */;
+			productName = FeatureFlagModule;
+		};
+		A1B2C3D4E5F6FFFF00000004 /* FeatureFlagModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000003C /* XCLocalSwiftPackageReference "Packages/Core/FeatureFlagModule" */;
+			productName = FeatureFlagModule;
+		};
+		A1B2C3D4E5F6FFFF00000006 /* StorageModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000002B /* XCLocalSwiftPackageReference "Packages/Core/StorageModule" */;
+			productName = StorageModule;
+		};
+		A1B2C3D4E5F6FFFF00000008 /* StorageModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000002B /* XCLocalSwiftPackageReference "Packages/Core/StorageModule" */;
+			productName = StorageModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F974F8302F8B43210060E7C4 /* Project object */;
 }
