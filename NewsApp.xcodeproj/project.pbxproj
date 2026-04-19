@@ -13,6 +13,12 @@
 		A1B2C3D4E5F6FFFF00000007 /* StorageModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000008 /* StorageModule */; };
 		A1B2C3D4E5F6FFFF00000009 /* NetworkModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF0000000A /* NetworkModule */; };
 		A1B2C3D4E5F6FFFF0000000B /* NetworkModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF0000000C /* NetworkModule */; };
+		A1B2C3D4E5F6FFFF0000000D /* SourceModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF0000000E /* SourceModule */; };
+		A1B2C3D4E5F6FFFF0000000F /* SourceModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000010 /* SourceModule */; };
+		A1B2C3D4E5F6FFFF00000011 /* ArticleModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000012 /* ArticleModule */; };
+		A1B2C3D4E5F6FFFF00000013 /* ArticleModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000014 /* ArticleModule */; };
+		A1B2C3D4E5F6FFFF00000015 /* SavedModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000016 /* SavedModule */; };
+		A1B2C3D4E5F6FFFF00000017 /* WebModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000018 /* WebModule */; };
 		F98DE2622F930C74009917B3 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F98DE2612F930C74009917B3 /* Secrets.xcconfig */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +85,10 @@
 				A1B2C3D4E5F6FFFF00000001 /* FeatureFlagModule in Frameworks */,
 				A1B2C3D4E5F6FFFF00000005 /* StorageModule in Frameworks */,
 				A1B2C3D4E5F6FFFF00000009 /* NetworkModule in Frameworks */,
+				A1B2C3D4E5F6FFFF0000000D /* SourceModule in Frameworks */,
+				A1B2C3D4E5F6FFFF00000011 /* ArticleModule in Frameworks */,
+				A1B2C3D4E5F6FFFF00000015 /* SavedModule in Frameworks */,
+				A1B2C3D4E5F6FFFF00000017 /* WebModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +99,8 @@
 				A1B2C3D4E5F6FFFF00000003 /* FeatureFlagModule in Frameworks */,
 				A1B2C3D4E5F6FFFF00000007 /* StorageModule in Frameworks */,
 				A1B2C3D4E5F6FFFF0000000B /* NetworkModule in Frameworks */,
+				A1B2C3D4E5F6FFFF0000000F /* SourceModule in Frameworks */,
+				A1B2C3D4E5F6FFFF00000013 /* ArticleModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +159,10 @@
 				A1B2C3D4E5F6FFFF00000002 /* FeatureFlagModule */,
 				A1B2C3D4E5F6FFFF00000006 /* StorageModule */,
 				A1B2C3D4E5F6FFFF0000000A /* NetworkModule */,
+				A1B2C3D4E5F6FFFF0000000E /* SourceModule */,
+				A1B2C3D4E5F6FFFF00000012 /* ArticleModule */,
+				A1B2C3D4E5F6FFFF00000016 /* SavedModule */,
+				A1B2C3D4E5F6FFFF00000018 /* WebModule */,
 			);
 			productName = NewsApp;
 			productReference = F974F8382F8B43210060E7C4 /* NewsApp.app */;
@@ -173,6 +189,8 @@
 				A1B2C3D4E5F6FFFF00000004 /* FeatureFlagModule */,
 				A1B2C3D4E5F6FFFF00000008 /* StorageModule */,
 				A1B2C3D4E5F6FFFF0000000C /* NetworkModule */,
+				A1B2C3D4E5F6FFFF00000010 /* SourceModule */,
+				A1B2C3D4E5F6FFFF00000014 /* ArticleModule */,
 			);
 			productName = NewsAppTests;
 			productReference = F974F8452F8B43250060E7C4 /* NewsAppTests.xctest */;
@@ -712,6 +730,36 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A1B2C3D4E5F600000000001A /* XCLocalSwiftPackageReference "Packages/Core/NetworkModule" */;
 			productName = NetworkModule;
+		};
+		A1B2C3D4E5F6FFFF0000000E /* SourceModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000004D /* XCLocalSwiftPackageReference "Packages/Features/SourceModule" */;
+			productName = SourceModule;
+		};
+		A1B2C3D4E5F6FFFF00000010 /* SourceModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000004D /* XCLocalSwiftPackageReference "Packages/Features/SourceModule" */;
+			productName = SourceModule;
+		};
+		A1B2C3D4E5F6FFFF00000012 /* ArticleModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000005E /* XCLocalSwiftPackageReference "Packages/Features/ArticleModule" */;
+			productName = ArticleModule;
+		};
+		A1B2C3D4E5F6FFFF00000014 /* ArticleModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000005E /* XCLocalSwiftPackageReference "Packages/Features/ArticleModule" */;
+			productName = ArticleModule;
+		};
+		A1B2C3D4E5F6FFFF00000016 /* SavedModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000006F /* XCLocalSwiftPackageReference "Packages/Features/SavedModule" */;
+			productName = SavedModule;
+		};
+		A1B2C3D4E5F6FFFF00000018 /* WebModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000007G /* XCLocalSwiftPackageReference "Packages/Features/WebModule" */;
+			productName = WebModule;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
