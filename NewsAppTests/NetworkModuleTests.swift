@@ -24,14 +24,18 @@ struct NewsAPIClientTests {
     @Test("fetchSources decodes valid JSON")
     func fetchSourcesDecodesValidJSON() async throws {
         let session = MockURLSession()
-        session.stubbedData = """
+        let sourcesJSON = """
         {
             "status": "ok",
             "sources": [
-                {"id": "bbc-news", "name": "BBC News", "description": "BBC News", "url": "https://bbc.com", "category": "general", "language": "en", "country": "gb"}
+                {
+                    "id": "bbc-news", "name": "BBC News", "description": "BBC News",
+                    "url": "https://bbc.com", "category": "general", "language": "en", "country": "gb"
+                }
             ]
         }
-        """.data(using: .utf8)!
+        """
+        session.stubbedData = Data(sourcesJSON.utf8)
 
         let client = NewsAPIClient(session: session, apiKey: "test-key", baseURL: URL(string: "https://newsapi.org")!)
         let sources = try await client.fetchSources()
@@ -42,7 +46,7 @@ struct NewsAPIClientTests {
     @Test("fetchArticles decodes valid JSON")
     func fetchArticlesDecodesValidJSON() async throws {
         let session = MockURLSession()
-        session.stubbedData = """
+        let articlesJSON = """
         {
             "status": "ok",
             "totalResults": 1,
@@ -57,7 +61,8 @@ struct NewsAPIClientTests {
                 }
             ]
         }
-        """.data(using: .utf8)!
+        """
+        session.stubbedData = Data(articlesJSON.utf8)
 
         let client = NewsAPIClient(session: session, apiKey: "test-key", baseURL: URL(string: "https://newsapi.org")!)
         let articles = try await client.fetchArticles(sourceIds: ["bbc-news"])
