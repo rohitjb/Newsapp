@@ -20,6 +20,7 @@
 		A1B2C3D4E5F6FFFF00000015 /* SavedModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000016 /* SavedModule */; };
 		A1B2C3D4E5F6FFFF00000017 /* WebModule in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6FFFF00000018 /* WebModule */; };
 		F98DE2622F930C74009917B3 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F98DE2612F930C74009917B3 /* Secrets.xcconfig */; };
+		F9B1A1F82F9A628D008F6F32 /* FeatureFlagModule in Frameworks */ = {isa = PBXBuildFile; productRef = F9B1A1F72F9A628D008F6F32 /* FeatureFlagModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		F974F8452F8B43250060E7C4 /* NewsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F974F84F2F8B43250060E7C4 /* NewsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98DE2612F930C74009917B3 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		F9B1A1EB2F9A6197008F6F32 /* NewsCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -73,6 +75,11 @@
 		F974F8522F8B43250060E7C4 /* NewsAppUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = NewsAppUITests;
+			sourceTree = "<group>";
+		};
+		F9B1A1EC2F9A6197008F6F32 /* NewsCompanion */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NewsCompanion;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -111,6 +118,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9B1A1E82F9A6197008F6F32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9B1A1F82F9A628D008F6F32 /* FeatureFlagModule in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -120,8 +135,10 @@
 				F974F83A2F8B43210060E7C4 /* NewsApp */,
 				F974F8482F8B43250060E7C4 /* NewsAppTests */,
 				F974F8522F8B43250060E7C4 /* NewsAppUITests */,
+				F9B1A1EC2F9A6197008F6F32 /* NewsCompanion */,
 				F974F8392F8B43210060E7C4 /* Products */,
 				F98DE2612F930C74009917B3 /* Secrets.xcconfig */,
+				F9B1A1F62F9A628D008F6F32 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,8 +148,16 @@
 				F974F8382F8B43210060E7C4 /* NewsApp.app */,
 				F974F8452F8B43250060E7C4 /* NewsAppTests.xctest */,
 				F974F84F2F8B43250060E7C4 /* NewsAppUITests.xctest */,
+				F9B1A1EB2F9A6197008F6F32 /* NewsCompanion.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F9B1A1F62F9A628D008F6F32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +244,29 @@
 			productReference = F974F84F2F8B43250060E7C4 /* NewsAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F9B1A1EA2F9A6197008F6F32 /* NewsCompanion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9B1A1F52F9A6198008F6F32 /* Build configuration list for PBXNativeTarget "NewsCompanion" */;
+			buildPhases = (
+				F9B1A1E72F9A6197008F6F32 /* Sources */,
+				F9B1A1E82F9A6197008F6F32 /* Frameworks */,
+				F9B1A1E92F9A6197008F6F32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F9B1A1EC2F9A6197008F6F32 /* NewsCompanion */,
+			);
+			name = NewsCompanion;
+			packageProductDependencies = (
+				F9B1A1F72F9A628D008F6F32 /* FeatureFlagModule */,
+			);
+			productName = NewsCompanion;
+			productReference = F9B1A1EB2F9A6197008F6F32 /* NewsCompanion.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -239,6 +287,9 @@
 					F974F84E2F8B43250060E7C4 = {
 						CreatedOnToolsVersion = 26.4;
 						TestTargetID = F974F8372F8B43210060E7C4;
+					};
+					F9B1A1EA2F9A6197008F6F32 = {
+						CreatedOnToolsVersion = 26.4;
 					};
 				};
 			};
@@ -268,6 +319,7 @@
 				F974F8372F8B43210060E7C4 /* NewsApp */,
 				F974F8442F8B43250060E7C4 /* NewsAppTests */,
 				F974F84E2F8B43250060E7C4 /* NewsAppUITests */,
+				F9B1A1EA2F9A6197008F6F32 /* NewsCompanion */,
 			);
 		};
 /* End PBXProject section */
@@ -289,6 +341,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F974F84D2F8B43250060E7C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9B1A1E92F9A6197008F6F32 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -335,6 +394,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F974F84B2F8B43250060E7C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9B1A1E72F9A6197008F6F32 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -483,8 +549,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NewsApp/NewsApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewsApp/Info.plist;
@@ -517,8 +585,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NewsApp/NewsApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewsApp/Info.plist;
@@ -628,6 +698,74 @@
 			};
 			name = Release;
 		};
+		F9B1A1F32F9A6198008F6F32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NewsCompanion/NewsCompanion.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sd.NewsCompanion;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F9B1A1F42F9A6198008F6F32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NewsCompanion/NewsCompanion.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sd.NewsCompanion;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -663,6 +801,15 @@
 			buildConfigurations = (
 				F974F8602F8B43250060E7C4 /* Debug */,
 				F974F8612F8B43250060E7C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9B1A1F52F9A6198008F6F32 /* Build configuration list for PBXNativeTarget "NewsCompanion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9B1A1F32F9A6198008F6F32 /* Debug */,
+				F9B1A1F42F9A6198008F6F32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -760,6 +907,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A1B2C3D4E5F600000000007G /* XCLocalSwiftPackageReference "Packages/Features/WebModule" */;
 			productName = WebModule;
+		};
+		F9B1A1F72F9A628D008F6F32 /* FeatureFlagModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F600000000003C /* XCLocalSwiftPackageReference "Packages/Core/FeatureFlagModule" */;
+			productName = FeatureFlagModule;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

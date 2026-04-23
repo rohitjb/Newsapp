@@ -10,7 +10,11 @@ import StorageModule
 struct RootTabView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var featureFlags = FeatureFlags()
-    @AppStorage("selectedSourceIds") private var selectedSourceIds: [String] = []
+    @AppStorage("selectedSourceIds") private var selectedSourceIdsRaw: String = ""
+
+    private var selectedSourceIds: [String] {
+        selectedSourceIdsRaw.isEmpty ? [] : selectedSourceIdsRaw.components(separatedBy: ",")
+    }
 
     var body: some View {
         TabView {
@@ -20,7 +24,7 @@ struct RootTabView: View {
                     var current = selectedSourceIds
                     if !current.contains(source.id) {
                         current.append(source.id)
-                        selectedSourceIds = current
+                        selectedSourceIdsRaw = current.joined(separator: ",")
                     }
                 }
             }
