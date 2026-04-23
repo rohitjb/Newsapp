@@ -10,8 +10,7 @@ import StorageModule
 struct RootTabView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var featureFlags = FeatureFlags()
-    @State private var selectedSourceIds: [String] = UserDefaults.standard
-        .stringArray(forKey: "selectedSourceIds") ?? []
+    @AppStorage("selectedSourceIds") private var selectedSourceIds: [String] = []
 
     var body: some View {
         TabView {
@@ -22,7 +21,6 @@ struct RootTabView: View {
                     if !current.contains(source.id) {
                         current.append(source.id)
                         selectedSourceIds = current
-                        UserDefaults.standard.set(current, forKey: "selectedSourceIds")
                     }
                 }
             }
