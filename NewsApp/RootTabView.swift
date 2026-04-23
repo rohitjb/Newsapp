@@ -54,5 +54,8 @@ struct RootTabView: View {
                 }
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: UserDefaults.didChangeNotification)) { _ in
+            featureFlags = FeatureFlags()
+        }
     }
 }
