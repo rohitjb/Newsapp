@@ -12,6 +12,9 @@ struct RootTabView: View {
     @State private var featureFlags = FeatureFlags()
     @AppStorage("selectedSourceIds") private var selectedSourceIdsRaw: String = ""
 
+    @State private var articlesPath = NavigationPath()
+    @State private var savedPath = NavigationPath()
+
     private var selectedSourceIds: [String] {
         selectedSourceIdsRaw.isEmpty ? [] : selectedSourceIdsRaw.components(separatedBy: ",")
     }
@@ -33,9 +36,21 @@ struct RootTabView: View {
             }
 
             // Tab 1: Articles
-            NavigationStack {
-                ArticleListView(sourceIds: selectedSourceIds) { _ in
-                    // Navigation handled via NavigationStack path
+            NavigationStack(path: $articlesPath) {
+                ArticleListView(sourceIds: selectedSourceIds) { article in
+                    articlesPath.append(article)
+                }
+                .navigationDestination(for: Article.self) { article in
+                    if let url = URL(string: article.url) {
+                        WebViewContainer(
+                            url: url,
+                            articleId: article.id,
+                            articleTitle: article.title,
+                            articleImageURL: article.imageURL,
+                            sourceName: article.sourceName,
+                            modelContext: modelContext
+                        )
+                    }
                 }
             }
             .tabItem {
@@ -44,9 +59,21 @@ struct RootTabView: View {
 
             // Tab 2: Saved (feature-flagged)
             if featureFlags.saveEnabled {
-                NavigationStack {
-                    SavedListView(modelContext: modelContext) { _ in
-                        // Navigation handled via NavigationStack path
+                NavigationStack(path: $savedPath) {
+                    SavedListView(modelContext: modelContext) { saved in
+                        savedPath.append(saved)
+                    }
+                    .navigationDestination(for: SavedArticle.self) { saved in
+                        if let url = URL(string: saved.url) {
+                            WebViewContainer(
+                                url: url,
+                                articleId: saved.id,
+                                articleTitle: saved.title,
+                                articleImageURL: saved.imageURL,
+                                sourceName: saved.sourceName,
+                                modelContext: modelContext
+                            )
+                        }
                     }
                 }
                 .tabItem {

@@ -1,0 +1,112 @@
+{
+  "uuid": "a21fb3d4-b0e1-4ebd-9b80-newsapp00001",
+  "lastMigration": 33,
+  "name": "NewsApp Mock",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "a21fb3d4-b0e1-4ebd-9b80-newsapp00002",
+      "type": "http",
+      "documentation": "Get sources",
+      "method": "get",
+      "endpoint": "v2/sources",
+      "responses": [
+        {
+          "uuid": "a21fb3d4-b0e1-4ebd-9b80-newsapp00003",
+          "body": "{\"status\":\"ok\",\"sources\":[{\"id\":\"bbc-news\",\"name\":\"BBC News\",\"description\":\"Breaking news\",\"url\":\"https://bbc.com\",\"category\":\"general\",\"language\":\"en\",\"country\":\"gb\"},{\"id\":\"techcrunch\",\"name\":\"TechCrunch\",\"description\":\"Tech news\",\"url\":\"https://techcrunch.com\",\"category\":\"technology\",\"language\":\"en\",\"country\":\"us\"}]}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Sources OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "a21fb3d4-b0e1-4ebd-9b80-newsapp00004",
+      "type": "http",
+      "documentation": "Get top headlines",
+      "method": "get",
+      "endpoint": "v2/top-headlines",
+      "responses": [
+        {
+          "uuid": "a21fb3d4-b0e1-4ebd-9b80-newsapp00005",
+          "body": "{\"status\":\"ok\",\"totalResults\":1,\"articles\":[{\"source\":{\"id\":\"bbc-news\",\"name\":\"BBC News\"},\"title\":\"Test UI Headline\",\"url\":\"https://bbc.com/article\",\"urlToImage\":null,\"publishedAt\":\"2026-04-12T10:00:00Z\",\"description\":\"A test article for UI tests\"}]}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Headlines OK",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    {"type": "route", "uuid": "a21fb3d4-b0e1-4ebd-9b80-newsapp00002"},
+    {"type": "route", "uuid": "a21fb3d4-b0e1-4ebd-9b80-newsapp00004"}
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [],
+  "proxyResHeaders": [],
+  "data": [],
+  "callbacks": [],
+  "ingressHost": ""
+}

@@ -98,7 +98,9 @@ public struct NewsAPIClient: NewsAPIClientProtocol {
     }
 
     public static func makeLive() -> NewsAPIClient {
-        let disablePinning = ProcessInfo.processInfo.arguments.contains("-disablePinning")
+        let args = ProcessInfo.processInfo.arguments
+        let disablePinning = args.contains("-disablePinning")
+
         let session: URLSession
         if disablePinning {
             session = URLSession.shared
@@ -107,6 +109,17 @@ public struct NewsAPIClient: NewsAPIClientProtocol {
             let config = URLSessionConfiguration.default
             session = URLSession(configuration: config, delegate: delegate, delegateQueue: nil)
         }
-        return NewsAPIClient(session: session)
+
+        let baseURL: URL
+        if let idx = args.firstIndex(of: "-baseURL"),
+           args.indices.contains(idx + 1),
+           let overrideURL = URL(string: args[idx + 1]) {
+            baseURL = overrideURL
+        } else {
+            baseURL = URL(string: "https://newsapi.org")!
+        }
+
+        let apiKey = Bundle.main.infoDictionary?["NEWSAPI_KEY"] as? String ?? ""
+        return NewsAPIClient(session: session, apiKey: apiKey, baseURL: baseURL)
     }
 }
