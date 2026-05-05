@@ -29,6 +29,9 @@ jobs:
           NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
         run: echo "NEWSAPI_KEY = $NEWSAPI_KEY" > Secrets.xcconfig
 
+      - name: Install xcpretty
+        run: gem install xcpretty
+
       - name: Install Mockoon CLI
         run: npm install -g @mockoon/cli
 
