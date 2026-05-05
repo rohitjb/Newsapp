@@ -6,10 +6,11 @@ public protocol URLSessionProtocol {
 
 extension URLSession: URLSessionProtocol {}
 
-public enum NewsAPIError: Error, Equatable {
+public enum NewsAPIError: Error {
     case httpError(statusCode: Int)
-    case decodingError
+    case decodingError(String)
     case invalidURL
+    case missingAPIKey
 }
 
 struct SourcesResponse: Decodable {
@@ -67,17 +68,17 @@ public struct NewsAPIClient: NewsAPIClientProtocol {
     }
 
     public func fetchSources() async throws -> [SourceDTO] {
+        guard !apiKey.isEmpty else { throw NewsAPIError.missingAPIKey }
         let url = NewsAPIEndpoint.sources.url(baseURL: baseURL, apiKey: apiKey)
-        let request = URLRequest(url: url)
-        let (data, response) = try await session.data(for: request)
+        let (data, response) = try await session.data(for: URLRequest(url: url))
         try validate(response: response)
         return try decode(SourcesResponse.self, from: data).sources
     }
 
     public func fetchArticles(sourceIds: [String]) async throws -> [ArticleDTO] {
+        guard !apiKey.isEmpty else { throw NewsAPIError.missingAPIKey }
         let url = NewsAPIEndpoint.topHeadlines(sourceIds: sourceIds).url(baseURL: baseURL, apiKey: apiKey)
-        let request = URLRequest(url: url)
-        let (data, response) = try await session.data(for: request)
+        let (data, response) = try await session.data(for: URLRequest(url: url))
         try validate(response: response)
         return try decode(ArticlesResponse.self, from: data).articles
     }
@@ -92,8 +93,10 @@ public struct NewsAPIClient: NewsAPIClientProtocol {
     private func decode<T: Decodable>(_ type: T.Type, from data: Data) throws -> T {
         do {
             return try decoder.decode(type, from: data)
+        } catch let error as DecodingError {
+            throw NewsAPIError.decodingError(error.debugDescription)
         } catch {
-            throw NewsAPIError.decodingError
+            throw NewsAPIError.decodingError(error.localizedDescription)
         }
     }
 
