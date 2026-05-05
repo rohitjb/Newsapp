@@ -78,11 +78,14 @@ public final class PinningDelegate: NSObject, URLSessionDelegate, Sendable {
         let keyType = attrs?[kSecAttrKeyType as String] as? String
         let keySize = attrs?[kSecAttrKeySizeInBits as String] as? Int
 
+        let rsaType = kSecAttrKeyTypeRSA as String
+        let ecType  = kSecAttrKeyTypeEC as String
+
         let header: Data
         switch (keyType, keySize) {
-        case (kSecAttrKeyTypeRSA as String, 2048): header = Self.rsa2048Header
-        case (kSecAttrKeyTypeRSA as String, 4096): header = Self.rsa4096Header
-        case (kSecAttrKeyTypeEC as String, 256):   header = Self.ecP256Header
+        case (rsaType, 2048): header = Self.rsa2048Header
+        case (rsaType, 4096): header = Self.rsa4096Header
+        case (ecType, 256):  header = Self.ecP256Header
         default: return nil
         }
         return header + keyData
